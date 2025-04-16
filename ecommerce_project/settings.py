@@ -5,7 +5,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback_dev_secret')
+SECRET_KEY = os.getenv('skl1dx-=s240va#po&en+xx2)p@&ccqnz1fkq@-2j(3b)#=wu7', 'fallback_dev_secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
@@ -14,8 +14,8 @@ DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,ai-recommender-k6wy.onrender.com').split(',')
 
 # OpenAI and MongoDB URIs
-OPENAI_KEY = os.getenv("OPENAI_KEY")
-MONGO_URI = os.getenv("MONGO_URI")
+OPENAI_KEY = os.getenv("f32fc0b5f1c0f16442a67071d84b847c")
+MONGO_URI = os.getenv("f6365bbe110fe4eb8bde6ea0508382e2")
 
 # Application definition
 INSTALLED_APPS = [

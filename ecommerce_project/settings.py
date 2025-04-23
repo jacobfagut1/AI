@@ -4,18 +4,12 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('skl1dx-=s240va#po&en+xx2)p@&ccqnz1fkq@-2j(3b)#=wu7', 'fallback_dev_secret')
+SECRET_KEY = os.getenv('!p#8va9@bc5@0+s57w5b)ng0rm!_8l9d(e@x4ie_&7#rc1u**q', 'fallback_dev_secret')
+DEBUG = False
+ALLOWED_HOSTS = ['ai-recommender-k6wy.onrender.com', 'localhost', '127.0.0.1']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
-
-# List of allowed hosts
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,ai-recommender-k6wy.onrender.com').split(',')
-
-# OpenAI and MongoDB URIs
-OPENAI_KEY = os.getenv("f32fc0b5f1c0f16442a67071d84b847c")
-MONGO_URI = os.getenv("f6365bbe110fe4eb8bde6ea0508382e2")
+OPENAI_KEY = os.getenv("https://api.openai.com/v1/responses")
+MONGO_URI = os.getenv("mongodb+srv://mjefagut01:secretpassword@cluster0.9lahgmr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 # Application definition
 INSTALLED_APPS = [
@@ -64,7 +58,7 @@ DATABASES = {
         'NAME': 'ecommerce_db',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': MONGO_URI,
+            'host': 'mongodb+srv://mjefagut01:secretpassword@cluster0.9lahgmr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
         },
     }
 }

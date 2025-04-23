@@ -93,3 +93,7 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+print("BASE DIR:", os.getcwd())
+print("FILES:", os.listdir())

@@ -1,15 +1,26 @@
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-$sn*ilosstwg2ad=ew#^+lnjpu&@et4#h6k=bblc$h^vws@%r2'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+import os
 
 SECRET_KEY = os.getenv('!p#8va9@bc5@0+s57w5b)ng0rm!_8l9d(e@x4ie_&7#rc1u**q', 'fallback_dev_secret')
 DEBUG = False
 ALLOWED_HOSTS = ['ai-recommender-k6wy.onrender.com', 'localhost', '127.0.0.1']
 
-OPENAI_KEY = os.getenv("https://api.openai.com/v1/responses")
-MONGO_URI = os.getenv("mongodb+srv://mjefagut01:secretpassword@cluster0.9lahgmr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+OPENAI_KEY = os.getenv("859836f69a8d17c8564a55e4e2b112e5")
+MONGO_URI = os.getenv("932628464a9926edfdd4ea611e005463")
 
 # Application definition
 INSTALLED_APPS = [

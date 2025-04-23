@@ -1,11 +1,11 @@
-from djongo import models  # Use djongo's models for MongoDB
+from djongo import models
 
 class Product(models.Model):
-    _id = models.ObjectIdField()  # MongoDB object ID
-    name = models.CharField(max_length=100)  # Product name
-    description = models.TextField()  # Product description
-    price = models.FloatField()  # Product price
-    category = models.CharField(max_length=50)  # Product category
-    
+    _id = models.ObjectIdField()
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.FloatField()
+    category = models.CharField(max_length=50)
+
     def __str__(self):
-        return self.name  # Return the product name when the object is printed
+        return self.name

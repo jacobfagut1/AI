@@ -2,14 +2,75 @@
 <html>
 <head>
     <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        form {
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .tags {
+            margin-top: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h2>Add New Product</h2>
+    
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Add Product</button>
     </form>
-    <a href="{% url 'product_list' %}">Back to Product List</a>
+
+    {% if tags %}
+        <div class="tags">
+            <h3>Generated Tags:</h3>
+            {% for tag in tags %}
+                <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a href="{% url 'product_list' %}">← Back to Product List</a>
 </body>
 </html>

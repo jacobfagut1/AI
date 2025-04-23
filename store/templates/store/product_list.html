@@ -6,10 +6,18 @@
 <body>
     <h1>Product List</h1>
     <ul>
-        {% for product in products %}
-            <li>{{ product.name }} - P{{ product.price }}</li>
+    {% for product in products %}
+        <li>
+        <strong>{{ product.name }}</strong> - {{ product.category }} - ${{ product.price }}<br>
+        <em>{{ product.description }}</em><br>
+        Tags: 
+        {% for tag in product.tags %}
+            <span style="background-color:#e0e0e0; padding:3px; margin:2px;">{{ tag }}</span>
         {% endfor %}
+        </li>
+    {% endfor %}
     </ul>
+
 
     <h2>All Products</h2>
     <ul>

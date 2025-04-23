@@ -17,7 +17,7 @@ import os
 
 SECRET_KEY = os.getenv('!p#8va9@bc5@0+s57w5b)ng0rm!_8l9d(e@x4ie_&7#rc1u**q', 'fallback_dev_secret')
 DEBUG = False
-ALLOWED_HOSTS = ['ai-5k1u.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 OPENAI_KEY = os.getenv("859836f69a8d17c8564a55e4e2b112e5")
 MONGO_URI = os.getenv("932628464a9926edfdd4ea611e005463")

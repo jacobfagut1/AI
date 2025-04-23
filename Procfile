@@ -1,1 +1,1 @@
-web: gunicorn ecommerce_project.wsgi --timeout 120
+web: gunicorn ecommerce_project.wsgi:application --timeout 120 --bind 0.0.0.0:$PORT

@@ -5,9 +5,6 @@ SECRET_KEY = 'django-insecure-$sn*ilosstwg2ad=ew#^+lnjpu&@et4#h6k=bblc$h^vws@%r2
 DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = ['ai-5k1u.onrender.com', 'localhost', '127.0.0.1']
 
-# OpenAI Key (API Key)
-OPENAI_KEY = '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'
-
 
 # settings.py
 GEMINI_API_KEY = 'AIzaSyA2FCqEkieRKAYxObBmb-quPb_TBEQU8x0'  # Replace with your actual Gemini API key
@@ -25,7 +22,6 @@ INSTALLED_APPS = [
     'store',
     'djongo',
     'taggit',
-    'openai',
 ]
 
 MIDDLEWARE = [

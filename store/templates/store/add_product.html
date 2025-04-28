@@ -31,8 +31,14 @@
         button:hover {
             background-color: #45a049;
         }
-        .tags {
+        .suggested-tags {
             margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .suggested-tags h3 {
+            margin-top: 0;
         }
         .tag {
             display: inline-block;
@@ -41,6 +47,10 @@
             border-radius: 15px;
             margin-right: 5px;
             margin-bottom: 5px;
+            cursor: pointer; /* Indicate they are clickable */
+        }
+        .tag:hover {
+            background-color: #e0e0e0;
         }
         a {
             display: inline-block;
@@ -55,22 +65,35 @@
 </head>
 <body>
     <h2>Add New Product</h2>
-    
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
+
+        {% if suggested_tags %}
+            <div class="suggested-tags">
+                <h3>Suggested Tags:</h3>
+                {% for tag in suggested_tags %}
+                    <span class="tag" onclick="addTag('{{ tag }}')">#{{ tag }}</span>
+                {% endfor %}
+                <p>Click on a tag to add it to the input field.</p>
+            </div>
+        {% endif %}
+
         <button type="submit">Add Product</button>
     </form>
 
-    {% if tags %}
-        <div class="tags">
-            <h3>Generated Tags:</h3>
-            {% for tag in tags %}
-                <span class="tag">#{{ tag }}</span>
-            {% endfor %}
-        </div>
-    {% endif %}
-
     <a href="{% url 'product_list' %}">← Back to Product List</a>
+
+    <script>
+        function addTag(tag) {
+            const tagsInput = document.querySelector('input[name="tags"]');
+            if (tagsInput.value) {
+                tagsInput.value += ', ' + tag;
+            } else {
+                tagsInput.value = tag;
+            }
+        }
+    </script>
 </body>
 </html>

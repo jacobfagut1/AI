@@ -3,7 +3,7 @@
 # Secret Key, Debug, and Allowed Hosts
 SECRET_KEY = 'django-insecure-$sn*ilosstwg2ad=ew#^+lnjpu&@et4#h6k=bblc$h^vws@%r2'  # Replace with your actual secret key
 DEBUG = True  # Set to False in production
-ALLOWED_HOSTS = ['ai-5k1u.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ai-1-ommo.onrender.com', 'localhost', '127.0.0.1']
 
 
 # settings.py
